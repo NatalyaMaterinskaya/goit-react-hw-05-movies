@@ -35,4 +35,8 @@ img{
 
 button{
      cursor: pointer;
+}
+
+section{
+  margin: 20px;
 }`;

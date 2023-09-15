@@ -1,12 +1,13 @@
 import { TrendingMoviesItem } from 'components/TrendingMoviesItem/TrendingMoviesItem';
-import React from 'react'
+import React from 'react';
+import { Wrapper } from './TrendingMoviesList.styled';
 
-export const TrendingMoviesList = ({films}) => {
+export const TrendingMoviesList = ({ films }) => {
   return (
-    <ul>
-      {films?.map(film => (
-        <TrendingMoviesItem key={film.id} image={film} />
+    <Wrapper>
+      {films.map(film => (
+        <TrendingMoviesItem key={film.id} film={film} />
       ))}
-    </ul>
+    </Wrapper>
   );
-}
+};
