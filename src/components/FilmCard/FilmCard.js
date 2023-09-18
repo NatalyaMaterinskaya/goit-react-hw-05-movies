@@ -3,11 +3,12 @@ import { RxArrowLeft } from 'react-icons/rx';
 import {
   Description,
   GenresWrapper,
+  LinkBtnItem,
   LinkItem,
   PrevBtn,
   Wrapper,
 } from './FilmCard.styled';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 const defaultImg =
   '<https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700>';
@@ -23,10 +24,10 @@ export const FilmCard = ({
       {title && (
         <>
           <PrevBtn type="button">
-            <LinkItem to={backLink}>
+            <LinkBtnItem to={backLink}>
               <RxArrowLeft />
               <span>Go back</span>
-            </LinkItem>
+            </LinkBtnItem>
           </PrevBtn>
           <Wrapper>
             <img
@@ -53,6 +54,15 @@ export const FilmCard = ({
               </GenresWrapper>
             </Description>
           </Wrapper>
+          <ul>
+            <li>
+              <LinkItem to="cast">Cast</LinkItem>
+            </li>
+            <li>
+              <LinkItem to="reviews">Reviews</LinkItem>
+            </li>
+          </ul>
+          <Outlet />
         </>
       )}
     </section>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const PrevBtn = styled.div`
@@ -32,7 +32,7 @@ export const PrevBtn = styled.div`
   }
 `;
 
-export const LinkItem = styled(Link)`
+export const LinkBtnItem = styled(Link)`
  color: #ffffff; 
 `;
 
@@ -57,4 +57,16 @@ export const Description = styled.div`
 export const GenresWrapper = styled.div`
   display: flex;
   gap: 8px;
+`;
+
+export const LinkItem = styled(NavLink)`
+font-weight: 700;
+  display: inline-block;
+  text-decoration: none;
+  padding: 4px 0;
+  color: #000000;
+
+  &.active {
+    color: #ff6347;
+  }
 `;

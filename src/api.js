@@ -30,3 +30,29 @@ export const fetchMovieById = async filmId => {
   });
   return response.data;
 };
+
+export const fetchMovieCast = async filmId => {
+  const response = await axios.get(`/movie/${filmId}/credits`, {
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${TOKEN}`,
+    },
+    params: {
+      language: 'en-US',
+    },
+  });
+  return response.data.cast;
+};
+
+export const fetchMovieReviews = async filmId => {
+  const response = await axios.get(`/movie/${filmId}/reviews`, {
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${TOKEN}`,
+    },
+    params: {
+      language: 'en-US',
+    },
+  });
+  return response.data.results;
+};

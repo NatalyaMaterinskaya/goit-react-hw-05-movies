@@ -1,7 +1,7 @@
 import { fetchMovieById } from 'api';
 import { FilmCard } from 'components/FilmCard/FilmCard';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
 
 export const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -17,7 +17,6 @@ export const MovieDetailsPage = () => {
         setError(false);
 
         const response = await fetchMovieById(movieId);
-        console.log('response', response);
         const newFilm = response;
         if (newFilm.length === 0) {
           throw new Error();
