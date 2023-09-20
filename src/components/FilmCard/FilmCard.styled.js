@@ -12,7 +12,7 @@ export const PrevBtn = styled.div`
   line-height: 24px;
   border: 0;
   border-radius: 2px;
- 
+
   background-color: #4e4a4a75;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
@@ -33,11 +33,11 @@ export const PrevBtn = styled.div`
 `;
 
 export const LinkBtnItem = styled(Link)`
- color: #ffffff; 
+  color: #ffffff;
 `;
 
 export const Wrapper = styled.div`
- padding-bottom: 20px;
+  padding-bottom: 20px;
   display: flex;
   gap: 16px;
   border-bottom: 2px solid #e7e9fc;
@@ -59,8 +59,19 @@ export const GenresWrapper = styled.div`
   gap: 8px;
 `;
 
+export const DetailsList = styled.ul`
+  margin-top: 20px;
+  list-style-type: none;
+`;
+
+export const DetailsItem = styled.li`
+  margin-left: 16px;
+  margin-bottom: 20px;
+`;
+
 export const LinkItem = styled(NavLink)`
-font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
   display: inline-block;
   text-decoration: none;
   padding: 4px 0;

@@ -2,6 +2,8 @@ import React from 'react';
 import { RxArrowLeft } from 'react-icons/rx';
 import {
   Description,
+  DetailsItem,
+  DetailsList,
   GenresWrapper,
   LinkBtnItem,
   LinkItem,
@@ -11,7 +13,7 @@ import {
 import { Outlet, useLocation } from 'react-router-dom';
 
 const defaultImg =
-  '<https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700>';
+  'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
 export const FilmCard = ({
   film: { poster_path, title, release_date, vote_average, overview, genres },
@@ -54,14 +56,14 @@ export const FilmCard = ({
               </GenresWrapper>
             </Description>
           </Wrapper>
-          <ul>
-            <li>
+          <DetailsList>
+            <DetailsItem>
               <LinkItem to="cast">Cast</LinkItem>
-            </li>
-            <li>
+            </DetailsItem>
+            <DetailsItem>
               <LinkItem to="reviews">Reviews</LinkItem>
-            </li>
-          </ul>
+            </DetailsItem>
+          </DetailsList>
           <Outlet />
         </>
       )}

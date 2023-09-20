@@ -1,4 +1,5 @@
 import { fetchMovieReviews } from 'api';
+import { ReviewsList } from 'components/ReviewsList/ReviewsList';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
@@ -31,7 +32,5 @@ export const Reviews = () => {
     }
     getFilmReviews();
   }, [movieId]);
-  return (
-    <div>Reviews</div>
-  )
+      return <ReviewsList reviews={reviews} />;
 }
