@@ -56,3 +56,17 @@ export const fetchMovieReviews = async filmId => {
   });
   return response.data.results;
 };
+
+export const fetchMovie = async query => {
+  const response = await axios.get(`/search/movie`, {
+    headers: {
+      accept: 'application/json',
+      Authorization: `Bearer ${TOKEN}`,
+    },
+    params: {
+      query: query,
+      language: 'en-US',
+    },
+  });
+  return response.data.results;
+};
