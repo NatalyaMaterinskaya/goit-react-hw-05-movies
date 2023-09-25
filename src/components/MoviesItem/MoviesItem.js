@@ -1,11 +1,11 @@
 import React from 'react';
-import { LinkItem, ListItem } from './TrendingMoviesItem.styled';
+import { LinkItem, ListItem } from './MoviesItem.styled';
 import { useLocation } from 'react-router-dom';
 
-export const TrendingMoviesItem = ({ film: { id, title } }) => {
+export const MoviesItem = ({ film: { id, title } }) => {
     const location = useLocation();
   return (
-    <ListItem>
+    <ListItem >
       <LinkItem to={`/movies/${id}`} state={{ from: location }}>
         {title}
       </LinkItem>

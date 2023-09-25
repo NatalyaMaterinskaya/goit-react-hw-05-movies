@@ -1,17 +1,16 @@
 import { fetchTrendingMovies } from 'api';
-import {TrendingMoviesList } from 'components/TrendingMoviesList/TrendingMoviesList';
+import { List } from 'components/List/List';
 import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 export const HomePage = () => {
   const [trendingFilms, setTrendingFilms] = useState([]);
   const [, setIsLoading] = useState(false);
-  const [, setError] = useState(false);
 
   useEffect(() => {
     async function getTrendingFilms() {
       try {
         setIsLoading(true);
-        setError(false);
         const response = await fetchTrendingMovies();
 
         const newFilms = response;
@@ -19,9 +18,12 @@ export const HomePage = () => {
           throw new Error();
         }
         setTrendingFilms([...newFilms]);
+        toast.success('Downloaded!');
       } catch (error) {
-        setError(true);
         console.log(error);
+        toast.success('Oops!Something went wrong! Please reload the page!', {
+          duration: 5000,
+        });
       } finally {
         setIsLoading(false);
       }
@@ -32,7 +34,7 @@ export const HomePage = () => {
   return (
     <section>
       <h1>Trending today</h1>
-      {trendingFilms.length>0 && <TrendingMoviesList films={trendingFilms} />}
+      {trendingFilms.length > 0 && <List films={trendingFilms} />}
     </section>
   );
 };
