@@ -3,12 +3,13 @@ import { FilmCard } from 'components/FilmCard/FilmCard';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { Loader } from 'components/Loader/Loader';
 
 export const MovieDetailsPage = () => {
   const { movieId } = useParams();
 
   const [film, setFilm] = useState('');
-  const [, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getFilm() {
@@ -17,14 +18,15 @@ export const MovieDetailsPage = () => {
 
         const response = await fetchMovieById(movieId);
         const newFilm = response;
-        if (newFilm.length === 0) {
+                console.log('newFilms', newFilm);
+        if (!newFilm) {
           throw new Error();
         }
         setFilm(newFilm);
         toast.success('Downloaded!');
       } catch (error) {
         console.log(error);
-        toast.success('Oops!Something went wrong! Please reload the page!', {
+        toast.error('Oops!Something went wrong!', {
           duration: 5000,
         });
       } finally {
@@ -33,5 +35,9 @@ export const MovieDetailsPage = () => {
     }
     getFilm();
   }, [movieId]);
-  return <FilmCard film={film} />;
+   return (
+     <>
+       {isLoading ? <Loader /> : film && <FilmCard film={film} />}
+     </>
+   );
 };

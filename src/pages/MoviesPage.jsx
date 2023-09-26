@@ -4,6 +4,7 @@ import { Searchbar } from 'components/Searchbar/Searchbar';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { Loader } from 'components/Loader/Loader';
 
 export const MoviesPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,9 +16,10 @@ export const MoviesPage = () => {
     async function getFilms() {
       try {
         setIsLoading(true);
-        if (query === '') return;
+        if (!query) return;
+        console.log('query', query);
         const response = await fetchMovie(query);
-        console.log('query', response);
+        console.log('response', response);
         const newQuery = response;
         if (newQuery.length === 0) {
           throw new Error();
@@ -26,7 +28,7 @@ export const MoviesPage = () => {
         toast.success('Downloaded!');
       } catch (error) {
         console.log(error);
-        toast.success('Oops!Something went wrong! Please reload the page!', {
+        toast.error('Oops!Something went wrong!', {
           duration: 5000,
         });
       } finally {
@@ -45,9 +47,9 @@ export const MoviesPage = () => {
   };
 
   return (
-    <>
+    <section>
       <Searchbar onSubmit={handleSubmit} />
-      {search.length > 0 && <List films={search} />}
-    </>
+      {isLoading ? <Loader /> : search.length > 0 && <List films={search} />}
+    </section>
   );
 };
