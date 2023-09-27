@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import { ListItem, Text } from './CastItem.styled';
 
 const defaultImg =
@@ -21,4 +23,8 @@ export const CastItem = ({ actor: { profile_path, name, character } }) => {
         <h3>{character}</h3>
     </ListItem>
   );
+};
+
+CastItem.propTypes = {
+  actor: PropTypes.objectOf(PropTypes.string).isRequired,
 };

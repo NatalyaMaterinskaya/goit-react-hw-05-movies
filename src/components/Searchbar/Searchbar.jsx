@@ -1,9 +1,7 @@
+import PropTypes from 'prop-types';
+
 import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
-import {
-  SearchForm,
-  Button,
-  Input,
-} from './Searchbar.styled';
+import { SearchForm, Button, Input } from './Searchbar.styled';
 
 export const Searchbar = ({ onSubmit }) => {
   return (
@@ -21,4 +19,8 @@ export const Searchbar = ({ onSubmit }) => {
       />
     </SearchForm>
   );
+};
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };

@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+
 import { RxArrowLeft } from 'react-icons/rx';
 
 import {
@@ -79,4 +81,15 @@ export const FilmCard = ({
       )}
     </section>
   );
+};
+
+FilmCard.propTypes = {
+  film: PropTypes.shape({
+    poster_path: PropTypes.string,
+    title: PropTypes.string,
+    release_date: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.object),
+  }).isRequired,
 };
