@@ -1,11 +1,15 @@
-import { HomePage } from 'pages/HomePage';
-import { GlobalStyle } from './GlobalStyle';
-import { MoviesPage } from 'pages/MoviesPage';
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import { AppLayuot } from './AppLayuot/AppLayuot';
-import { MovieDetailsPage } from 'pages/MovieDetailsPage';
-import { Cast } from './Cast/Cast';
-import { Reviews } from './Reviews/Reviews';
+import { GlobalStyle } from './GlobalStyle';
+
+const HomePage = lazy(() => import('pages/HomePage')); 
+const MoviesPage = lazy(() => import('pages/MoviesPage')); 
+const MovieDetailsPage = lazy(() => import('pages/MovieDetailsPage'));
+const Cast = lazy(() => import('./Cast/Cast')); 
+const Reviews = lazy(() => import('./Reviews/Reviews')); 
+
 
 export const App = () => {
   return (

@@ -1,11 +1,14 @@
-import { fetchMovieById } from 'api';
-import { FilmCard } from 'components/FilmCard/FilmCard';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import toast from 'react-hot-toast';
-import { Loader } from 'components/Loader/Loader';
 
-export const MovieDetailsPage = () => {
+import toast from 'react-hot-toast';
+
+import { fetchMovieById } from 'api';
+
+import { Loader } from 'components/Loader/Loader';
+import { FilmCard } from 'components/FilmCard/FilmCard';
+
+const MovieDetailsPage = () => {
   const { movieId } = useParams();
 
   const [film, setFilm] = useState('');
@@ -41,3 +44,5 @@ export const MovieDetailsPage = () => {
      </>
    );
 };
+
+export default MovieDetailsPage;

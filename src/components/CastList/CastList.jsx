@@ -1,6 +1,7 @@
-import { CastItem } from 'components/CastItem/CastItem';
 import React from 'react'
+
 import { Wrapper } from './CastList.styled';
+import { CastItem } from 'components/CastItem/CastItem';
 
 export const CastList = ({cast}) => {
   return (

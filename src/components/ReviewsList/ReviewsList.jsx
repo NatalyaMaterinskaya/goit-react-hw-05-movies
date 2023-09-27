@@ -1,6 +1,7 @@
-import { ReviewsItem } from 'components/ReviewsItem/ReviewsItem';
 import React from 'react'
+
 import { Wrapper } from './ReviewsList.styled';
+import { ReviewsItem } from 'components/ReviewsItem/ReviewsItem';
 
 export const ReviewsList = ({ reviews }) => {
   return (

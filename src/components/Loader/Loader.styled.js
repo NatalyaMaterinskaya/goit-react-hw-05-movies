@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const LoaderWrapper = styled.div`
   display: flex;
-  height: 100vh;
+  height: 20vh;
   justify-content: center;
   align-items: center;
 `;

@@ -1,9 +1,9 @@
+import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
 import {
   SearchForm,
   Button,
   Input,
 } from './Searchbar.styled';
-import { HiOutlineMagnifyingGlass } from 'react-icons/hi2';
 
 export const Searchbar = ({ onSubmit }) => {
   return (

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { ListItem, Text } from './CastItem.styled';
 
 const defaultImg =

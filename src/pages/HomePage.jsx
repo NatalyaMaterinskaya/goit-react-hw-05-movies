@@ -1,10 +1,13 @@
-import { fetchTrendingMovies } from 'api';
-import { List } from 'components/List/List';
-import { Loader } from 'components/Loader/Loader';
 import React, { useEffect, useState } from 'react';
+
 import toast from 'react-hot-toast';
 
-export const HomePage = () => {
+import { fetchTrendingMovies } from 'api';
+
+import { Loader } from 'components/Loader/Loader';
+import { List } from 'components/List/List';
+
+const HomePage = () => {
   const [trendingFilms, setTrendingFilms] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -38,7 +41,9 @@ export const HomePage = () => {
         <Loader/>
       ) : (
       trendingFilms.length > 0 && <List films={trendingFilms} />
-      )}
+    )} 
     </section>
   );
 };
+
+export default HomePage;
