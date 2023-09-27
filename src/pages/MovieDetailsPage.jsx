@@ -21,7 +21,7 @@ const MovieDetailsPage = () => {
 
         const response = await fetchMovieById(movieId);
         const newFilm = response;
-                console.log('newFilms', newFilm);
+        
         if (!newFilm) {
           throw new Error();
         }

@@ -20,7 +20,6 @@ const Cast = () => {
         setIsLoading(true);
 
         const response = await fetchMovieCast(movieId);
-        console.log('response', response);
         let newCast = response;
         if (newCast.length === 0) {
            newCast = null;

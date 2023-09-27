@@ -20,7 +20,6 @@ const Reviews = () => {
         setIsLoading(true);
 
         const response = await fetchMovieReviews(movieId);
-        console.log('reviews', response);
         let newReviews = response;
         if (newReviews.length === 0) {
           newReviews = null;

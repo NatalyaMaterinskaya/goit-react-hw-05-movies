@@ -6,6 +6,7 @@ import { Wrapper } from './ReviewsList.styled';
 import { ReviewsItem } from 'components/ReviewsItem/ReviewsItem';
 
 export const ReviewsList = ({ reviews }) => {
+
   return (
     <Wrapper>
       {reviews &&

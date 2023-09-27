@@ -14,5 +14,5 @@ export const ReviewsItem = ({ review: { author, content } }) => {
 };
 
 ReviewsItem.propTypes = {
-  review: PropTypes.objectOf(PropTypes.string).isRequired,
+  review: PropTypes.object.isRequired,
 };

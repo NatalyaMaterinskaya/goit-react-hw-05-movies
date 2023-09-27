@@ -20,9 +20,9 @@ const MoviesPage = () => {
       try {
         setIsLoading(true);
         if (!query) return;
-        console.log('query', query);
+
         const response = await fetchMovie(cutQuery(query));
-        console.log('response', response);
+
         const newQuery = response;
         if (newQuery.length === 0) {
           throw new Error();
@@ -43,7 +43,7 @@ const MoviesPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('search', search);
+
     const form = e.currentTarget;
     setSearchParams({ query: `${Date.now()}/${form.elements.query.value}`});
     form.reset();

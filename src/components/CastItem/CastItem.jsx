@@ -26,5 +26,5 @@ export const CastItem = ({ actor: { profile_path, name, character } }) => {
 };
 
 CastItem.propTypes = {
-  actor: PropTypes.objectOf(PropTypes.string).isRequired,
+  actor: PropTypes.object.isRequired,
 };

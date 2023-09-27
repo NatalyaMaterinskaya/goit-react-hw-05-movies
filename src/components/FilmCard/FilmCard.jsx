@@ -24,7 +24,6 @@ export const FilmCard = ({
   film: { poster_path, title, release_date, vote_average, overview, genres },
 }) => {
   const location = useLocation();
-   console.log(location.state);
   const backLink = location?.state?.from ?? '/';
   const releaseDate = '(' + release_date?.slice(0, 4) + ')';
   return (
